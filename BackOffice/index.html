@@ -89,31 +89,44 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col">
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-3">
-                                            <form action="" style="width: 100%;">
+                                            <form id="travelForm" action="" style="width: 100%;">
                                                 <label for="title" style="font-size: 18px;">Title:</label>
-                                                <input type="text" required minlength="3" placeholder="Enter the title of the offer" id="title" name="title" title="Enter a title for the travel offer. The title must be at least 3 characters long."
+                                                <input type="text" placeholder="Enter the title of the offer" id="title" name="title" 
+                                                    title="Enter a title for the travel offer. The title must be at least 3 characters long."
                                                     style="width: 100%; padding: 10px; font-size: 16px; margin-bottom: 10px;">
-                    
+                                                <div id="titleError" style="color: red; display: none;">Title must be at least 3 characters long.</div>
+                                                <div id="titleCorrect" style="color: green; display: none;">Correct</div>
+                                            
                                                 <label for="destination" style="font-size: 18px;">Destination:</label>
-                                                <input type="text" required minlength="3" pattern="[A-Za-z ]+" id="destination" name="destination" title="Enter the destination of the travel offer. The destination must be at least 3 characters long and contain only letters and spaces."
+                                                <input type="text" id="destination" name="destination" 
+                                                    title="Enter the destination of the travel offer. The destination must be at least 3 characters long and contain only letters and spaces."
                                                     placeholder="Enter the travel destination" 
                                                     style="width: 100%; padding: 10px; font-size: 16px; margin-bottom: 10px;">
-                    
-                                                <label for="departure Date" style="font-size: 18px;">Departure Date:</label>
-                                                <input type="date" required id="departure_date" name="departure_date" title="Select the departure date."
+                                                <div id="destinationError" style="color: red; display: none;">Destination must be at least 3 characters long and contain only letters and spaces.</div>
+                                                <div id="destinationCorrect" style="color: green; display: none;">Correct</div>
+                                            
+                                                <label for="departure_date" style="font-size: 18px;">Departure Date:</label>
+                                                <input type="date" id="departure_date" name="departure_date" title="Select the departure date."
                                                     style="width: 100%; padding: 10px; font-size: 16px; margin-bottom: 10px;">
-                    
-                                                <label for="return Date" style="font-size: 18px;">Return Date:</label>
-                                                <input type="date" required id="return_date" name="return_date" title="Select the return date."
+                                                <div id="departureDateError" style="color: red; display: none;">Please select a valid departure date.</div>
+                                                <div id="departureDateCorrect" style="color: green; display: none;">Correct</div>
+                                            
+                                                <label for="return_date" style="font-size: 18px;">Return Date:</label>
+                                                <input type="date" id="return_date" name="return_date" title="Select the return date."
                                                     style="width: 100%; padding: 10px; font-size: 16px; margin-bottom: 10px;">
-                    
+                                                <div id="returnDateError" style="color: red; display: none;">Return date must be after the departure date.</div>
+                                                <div id="returnDateCorrect" style="color: green; display: none;">Correct</div>
+                                            
                                                 <label for="price" style="font-size: 18px;">Price:</label>
-                                                <input type="number" min="0" step="0.1" placeholder="Enter the price"  id="price" name="price" title="Enter the price of the travel offer. The price must be a positive number or decimal."
+                                                <input type="number" placeholder="Enter the price" id="price" name="price" 
+                                                    title="Enter the price of the travel offer. The price must be a positive number or decimal."
                                                     style="width: 100%; padding: 10px; font-size: 16px; margin-bottom: 10px;">
-                    
+                                                <div id="priceError" style="color: red; display: none;">Price must be a positive number.</div>
+                                                <div id="priceCorrect" style="color: green; display: none;">Correct</div>
+                                            
                                                 <label for="availability" style="font-size: 18px;">Availability:</label>
-                                                <input type="checkbox" style="transform: scale(1.5); margin-left: 10px;"  id="customCheck">
-                    
+                                                <input type="checkbox" style="transform: scale(1.5); margin-left: 10px;" id="availability" name="availability">
+                                            
                                                 <br><br>
                                                 <label for="category" style="font-size: 18px;">Category:</label>
                                                 <select name="category" style="width: 100%; padding: 10px; font-size: 16px; margin-bottom: 10px;">
@@ -123,13 +136,14 @@
                                                     <option value="business">Business</option>
                                                     <option value="family">Family</option>
                                                 </select>
-                    
+                                            
                                                 <br>
                                                 <button type="submit" 
                                                     style="width: 100%; padding: 12px; font-size: 18px; background-color: #007bff; color: white; border: none; cursor: pointer; border-radius: 5px;">
                                                     Add Offer
                                                 </button>
-                                            </form>    
+                                            </form>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -204,6 +218,7 @@
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
 
+    <script src="part3.js"></script>
 </body>
 
 </html>
