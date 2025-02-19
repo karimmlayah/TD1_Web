@@ -14,7 +14,7 @@ function validerFormulaire() {
         alert("Le titre doit contenir au moins 3 caractères.");
         return false;
     }
-
+ //--------------------------
     if (!destinationRegex.test(destination) || destination.length < 3) {
         alert("La destination doit contenir uniquement des lettres et des espaces et avoir au moins 3 caractères.");
         return false;
